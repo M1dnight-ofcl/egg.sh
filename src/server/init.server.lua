@@ -9,9 +9,12 @@ local Div01 = eggsh.ESGui.New("Frame", "Div01", StarterGui.Screen, {
     Active=true,
     BackgroundColor3=Color3.fromHex("#111"),
     BackgroundTransparency=.15,
+    Padding=10,
 })
 
--- todo | IN PROGRESS | textboxes n stuff
--- local Txt01 = eggsh.ESGui.New("TextLabel", "Txt01", StarterGui.Screen.Div01, {
--- 	Text="Hello, World!"
--- })
+local Txt01 = eggsh.ESGui.New("TextLabel", "Txt01", StarterGui.Screen.Div01, {
+	Text="Test UI",
+    TextSize=35,
+    TextColor3=Color3.fromHex("#fff"),
+    Position=UDim2.new(.5,0,.5,0),
+})

@@ -59,15 +59,41 @@ function Class:Apply(element)
             local BorderRadItem = Instance.new("UICorner");
             BorderRadItem.Parent = element;
             BorderRadItem.CornerRadius =
-                typeof(value)=="UDim"
-                and value
-                or UDim.new(0,value);
+            typeof(value)=="UDim"
+            and value
+            or UDim.new(0,value);
+        elseif property=="Padding" then
+            local Padding = Instance.new("UIPadding");
+            Padding.Parent = element;
+            Padding.PaddingBottom =
+            typeof(value)=="UDim"
+            and value
+            or UDim.new(0,value);
+            Padding.PaddingLeft =
+            typeof(value)=="UDim"
+            and value
+            or UDim.new(0,value);
+            Padding.PaddingTop =
+            typeof(value)=="UDim"
+            and value
+            or UDim.new(0,value); 
+            Padding.PaddingRight =
+            typeof(value)=="UDim"
+            and value
+            or UDim.new(0,value);
         elseif
             (property=="Position" and typeof(value)=="UDim2") or
             (property=="BackgroundColor3" and typeof(value)=="Color3") or
             (property=="BackgroundTransparency" and typeof(value)=="number") or
             (property=="BorderColor3" and typeof(value)=="Color3") or
+            (property=="TextColor3" and typeof(value)=="Color3") or
+            (property=="BorderColor3" and typeof(value)=="Color3") or
             (property=="Active" and typeof(value)=="boolean") or
+            (property=="RichText" and typeof(value)=="boolean") or
+            (property=="TextScaled" and typeof(value)=="boolean") or
+            (property=="TextWrapped" and typeof(value)=="boolean") or
+            (property=="TextSize" and typeof(value)=="number") or
+            (property=="TextStrokeTransparency" and typeof(value)=="number") or
             (property=="Size" and typeof(value)=="UDim2") or
             (property=="Text" and typeof(value)=="string") or
             (property=="AnchorPoint" and typeof(value)=="Vector2")
@@ -97,6 +123,7 @@ function ESGui.New(class, name, parent, style)
     return self;
 end
 
+-- check updates
 CheckForUpdate()
 
 -- export code
