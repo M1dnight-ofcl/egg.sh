@@ -1,8 +1,16 @@
 local eggsh = require(game.ReplicatedStorage.Shared.eggshell.Main)
+local StarterGui = game:GetService("StarterGui")
 
-local Div1 = Instance.new("Frame");
-Div1.Parent = game.StarterGui.Screen
-local style = eggsh.Class.New({
-	BorderRadius=5,
+local Div01 = eggsh.ESGui.New("Frame", "Div01", StarterGui.Screen, {
+	BorderRadius=20,
+    Position=UDim2.new(0,15,0,15),
+    -- AnchorPoint=Vector2.new(0.5,0.5),
+    Size=UDim2.new(0,550,0,250),
+    Active=true,
+    BackgroundColor3=Color3.fromHex("#111"),
+    BackgroundTransparency=.15,
 })
-style:Apply(Div1)
+
+local Txt01 = eggsh.ESGui.New("TextLabel", "Txt01", StarterGui.Screen.Div01, {
+	Text="Hello, World!"
+})
