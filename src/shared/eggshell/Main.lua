@@ -1,7 +1,8 @@
 local eggshell = {};
+local HttpService = game:GetService("HttpService")
 
 local CheckForUpdate = function()
-    
+    local URL_ASTROS = "http://api.open-notify.org/astros.json"
 end
 
 -- CLASS:class (methods: Apply(elm), New(style))
@@ -33,9 +34,7 @@ function Class.New(style)
     and checkValidProperties();
     -- print(checks)
     if checks then print("checks passed")
-    else
-        error("please supply valid style property")
-    end
+    else error("please supply valid style property") end
     self.Style = style;
     return self;
 end
@@ -73,20 +72,15 @@ ESGui.__index = ESGui;
 function ESGui.New(class, name, parent, style)
     local self = {};
     setmetatable(self, ESGui);
-
     local ValidClasses={
         "Frame", "TextButton", "ImageButton",
-        "ImageLabel", "TextBox", "TextLabel"
-    }
+        "ImageLabel", "TextBox", "TextLabel" }
     if table.find(ValidClasses, class) then
         local NewESGui = Instance.new(class);
         NewESGui.Name = name;
         NewESGui.Parent = parent;
         Class.New(style):Apply(NewESGui);
-    else
-        error("invalid class");
-    end
-
+    else error("invalid class"); end
     return self;
 end
 
