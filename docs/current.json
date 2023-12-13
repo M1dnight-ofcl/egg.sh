@@ -1,3 +1,6 @@
 {
-    "v": 0.1
+    "v": 0.1,
+    "ModuleCDN": {
+        "Main": "https://raw.githubusercontent.com/M1dnight-ofcl/egg.sh/main/src/shared/eggshell/Main.lua"
+    }
 }
