@@ -8,7 +8,7 @@ local FAIL_MSG = "ran into error whilst checking for updates, skipping check";
 local CheckForUpdate = function()
     local response;
     local data;
-    print("Checking for egg.sh update")
+    print("Checking for egg.sh update");
 	local status, err = pcall(function()
         response = HttpService:GetAsync(GH_DEPLOYMENT_URL);
         data = HttpService:JSONDecode(response); end);
