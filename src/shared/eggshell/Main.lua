@@ -2,7 +2,7 @@ local eggshell = {};
 local HttpService = game:GetService("HttpService")
 
 local GH_DEPLOYMENT_URL = "https://m1dnight-ofcl.github.io/egg.sh/current.json";
-local VERSION = 0.1;
+local VERSION = 0.2;
 local FAIL_MSG = "ran into error whilst checking for updates, skipping check";
 
 local CheckForUpdate = function()
@@ -81,7 +81,9 @@ function Class:Apply(element)
             typeof(value)=="UDim"
             and value
             or UDim.new(0,value);
+        elseif property=="Weight" then element.FontFace.Weight = value;
         elseif
+            -- specific required type
             (property=="Position" and typeof(value)=="UDim2") or
             (property=="BackgroundColor3" and typeof(value)=="Color3") or
             (property=="BackgroundTransparency" and typeof(value)=="number") or
@@ -96,7 +98,9 @@ function Class:Apply(element)
             (property=="TextStrokeTransparency" and typeof(value)=="number") or
             (property=="Size" and typeof(value)=="UDim2") or
             (property=="Text" and typeof(value)=="string") or
-            (property=="AnchorPoint" and typeof(value)=="Vector2")
+            (property=="AnchorPoint" and typeof(value)=="Vector2") or
+            -- unknown type
+            (property=="Font")
             then element[property]=value;
         else error("invalid property") end
         i=i+1;
@@ -122,6 +126,9 @@ function ESGui.New(class, name, parent, style)
     else error("invalid class"); end
     return self;
 end
+
+-- todo | fix this stupid pos
+-- function ESGui:ApplyNewStyle(style) Class.New(style):Apply(self.NewESGui) end
 
 -- check updates
 CheckForUpdate()

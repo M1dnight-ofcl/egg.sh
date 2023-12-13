@@ -14,7 +14,11 @@ local Div01 = eggsh.ESGui.New("Frame", "Div01", StarterGui.Screen, {
 
 local Txt01 = eggsh.ESGui.New("TextLabel", "Txt01", StarterGui.Screen.Div01, {
 	Text="Test UI",
-    TextSize=35,
+    RichText=true,
+    TextSize=75,
+    Weight=Enum.FontWeight.ExtraLight,
+    Font=Enum.Font.TitilliumWeb,
     TextColor3=Color3.fromHex("#fff"),
     Position=UDim2.new(.5,0,.5,0),
 })
+Txt01:ApplyNewStyle({TextSize=5000})
