@@ -1,8 +1,21 @@
 local eggshell = {};
 local HttpService = game:GetService("HttpService")
 
+local GH_DEPLOYMENT_URL = "https://m1dnight-ofcl.github.io/egg.sh/current.json";
+local VERSION = 0.1;
+local FAIL_MSG = "ran into error whilst checking for updates, skipping check";
+
 local CheckForUpdate = function()
-    local URL_ASTROS = "http://api.open-notify.org/astros.json"
+    local response;
+    local data;
+    print("Checking for egg.sh update")
+	local status, err = pcall(function()
+        response = HttpService:GetAsync(GH_DEPLOYMENT_URL);
+        data = HttpService:JSONDecode(response); end);
+    if data and status then
+        if data.v > VERSION then print("\n------\nThere is a new egg.sh update avaliable\nDownload it at:\nhttps://m1dnight-ofcl.github.io/egg.sh/\n("..VERSION.."->"..data.v..")\n------\n");
+        else print("Using latest egg.sh version "..VERSION) end
+    else print(FAIL_MSG); end
 end
 
 -- CLASS:class (methods: Apply(elm), New(style))

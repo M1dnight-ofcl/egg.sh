@@ -11,6 +11,7 @@ local Div01 = eggsh.ESGui.New("Frame", "Div01", StarterGui.Screen, {
     BackgroundTransparency=.15,
 })
 
-local Txt01 = eggsh.ESGui.New("TextLabel", "Txt01", StarterGui.Screen.Div01, {
-	Text="Hello, World!"
-})
+-- todo | IN PROGRESS | textboxes n stuff
+-- local Txt01 = eggsh.ESGui.New("TextLabel", "Txt01", StarterGui.Screen.Div01, {
+-- 	Text="Hello, World!"
+-- })
