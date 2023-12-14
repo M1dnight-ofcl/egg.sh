@@ -2,7 +2,7 @@ local eggshell = {};
 local HttpService = game:GetService("HttpService")
 
 local GH_DEPLOYMENT_URL = "https://m1dnight-ofcl.github.io/egg.sh/current.json";
-local VERSION = 0.2;
+local VERSION = 0.3;
 local FAIL_MSG = "ran into error whilst checking for updates, skipping check";
 
 local CheckForUpdate = function()
