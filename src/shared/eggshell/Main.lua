@@ -27,18 +27,19 @@ function Class.New(style)
     setmetatable(self, Class);
     local checkValidProperties = function()
         -- ! OLD CHECK (check is now integrated to ":Apply()" method)
-        -- local ValidProperties = {
-        --     "BorderRadius", "Position", "Size",
-        --     "AnchorPoint", "BackgroundColor3",
-        --     "BorderColor3", "BackgroundTransparency",
-        --     "Size", "Active", "Text"
-        -- };
-        -- for property, value in pairs(style) do
-        --     if not table.find(ValidProperties, property) then
-        --         error("invalid property");
-        --         return false;
-        --     end
-        -- end
+        --[[
+        local ValidProperties = {
+            "BorderRadius", "Position", "Size",
+            "AnchorPoint", "BackgroundColor3",
+            "BorderColor3", "BackgroundTransparency",
+            "Size", "Active", "Text"
+        };
+        for property, value in pairs(style) do
+            if not table.find(ValidProperties, property) then
+                error("invalid property");
+                return false;
+            end
+        end ]]
         return true;
     end
     local checks =
@@ -82,6 +83,11 @@ function Class:Apply(element)
             and value
             or UDim.new(0,value);
         elseif property=="Weight" then element.FontFace.Weight = value;
+        elseif property=="Display" then
+            if value == "List" then
+                local myUIList = Instance.new("UIListLayout")
+                myUIList.Parent=element;
+            end
         elseif
             -- specific required type
             (property=="Position" and typeof(value)=="UDim2") or
