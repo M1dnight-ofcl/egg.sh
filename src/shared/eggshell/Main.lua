@@ -125,10 +125,10 @@ function ESGui.New(class, name, parent, style)
         "Frame", "TextButton", "ImageButton",
         "ImageLabel", "TextBox", "TextLabel" }
     if table.find(ValidClasses, class) then
-        local NewESGui = Instance.new(class);
-        NewESGui.Name = name;
-        NewESGui.Parent = parent;
-        Class.New(style):Apply(NewESGui);
+        self.Self = Instance.new(class);
+        self.Self.Name = name;
+        self.Self.Parent = parent;
+        Class.New(style):Apply(self.Self);
     else error("invalid class"); end
     return self;
 end
