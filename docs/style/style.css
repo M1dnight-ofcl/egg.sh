@@ -114,7 +114,7 @@ section p a:hover {
 
 #s1 .textWrapper {
   height: calc(100% - 4vmin);
-  width: calc(50% - 4vmin);
+  width: calc(50% - 2vmin);
   border-radius: 1vmin;
   background: #373737;
   border: 0.2vmin solid #4a4a4a;
@@ -153,7 +153,7 @@ section p a:hover {
 }
 #s1 .textWrapper2 {
   height: calc(100% - 4vmin);
-  width: calc(50% - 4vmin);
+  width: calc(50% - 2vmin);
   border-radius: 1vmin;
   background: #373737;
   border: 0.2vmin solid #4a4a4a;
