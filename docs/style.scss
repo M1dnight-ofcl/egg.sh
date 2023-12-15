@@ -132,7 +132,7 @@ section {
 }
 @mixin textWrapper($padding) {
     height: calc(100% - ($padding * 2));
-    width: calc(50% - $padding);
+    width: calc(50% - $padding * 1.5);
     border-radius: $global-border-radius;
     background: $ui1;
     border: .2vmin solid $ui2;
