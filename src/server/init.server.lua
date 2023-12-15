@@ -22,5 +22,6 @@ local Txt01 = eggsh.ESGui.New("TextLabel", "Txt01", Div01.Self, {
     TextColor3=Color3.fromHex("#fff"),
     Position=UDim2.new(.5,0,.5,0),
 })
+
 -- todo | fix this stupid shit
 -- Txt01:ApplyNewStyle({TextSize=5000})
