@@ -38,7 +38,7 @@ function Class.New(style)
             if not table.find(ValidProperties, property) then
                 error("invalid property");
                 return false;
-            end
+            end 
         end ]]
         return true;
     end

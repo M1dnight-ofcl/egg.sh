@@ -20,3 +20,5 @@ s1tw2.addEventListener('mousemove', (e) => { sleep(dragTime).then(() => {
     s1tw2.style.setProperty("--x", e.clientX - x);
     s1tw2.style.setProperty("--y", e.clientY - y);
 });})
+// lol
+const var1 = [];
