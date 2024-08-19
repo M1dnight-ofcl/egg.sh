@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>egg.sh : Home</title>
     <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/dark.min.css"></link>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </head>
 <body>
     
@@ -33,7 +39,50 @@
         </p>
     </div>
     <div class="textWrapper2" id="s1tw2">
-        <h1></h1>
+        <h1>Out Latest Version: v0.4</h1>
+        <h2>Changelog:</h2>
+        <ul>
+            <li>Added more Control over UI Lists</li>
+            <li>Improved Speed and Efficiency</li>
+            <li>Improved Error Detection</li>
+            <li>Planned Hover Styling (began work)</li>
+        </ul><br>
+        <a href="./builds/0.1.rbxm" download="0.4.rbxm">
+            <button class="button" id="Download">Download</button>
+        </a>
+    </div>
+</section>
+<section id="s2">
+    <div class="textWrapper" id="s1tw3">
+        <div class="subTextWrapper">
+            <h1>How To Use</h1>
+            <p>
+                After clicking download, you should get a .rbxm file. 
+                simply import this into roblox, open the model and drag 
+                the eggshell folder into replicated storage. To use, just 
+                use require to import it.
+            </p><br>
+            <p>You can find the download above</p><br>
+            <p>To start using it, you can write the following code:</p><br>
+            <pre><code class="language-lua">
+local eggsh = require(game.ReplicatedStorage.Shared.eggshell.Main);
+local StarterGui = game:GetService("StarterGui");
+
+local Div01 = eggsh.ESGui.New("Frame", "Div01", StarterGui.Screen, {
+	BorderRadius=20,
+    Display="List",
+    Position=UDim2.new(0,15,0,15),
+    -- AnchorPoint=Vector2.new(0.5,0.5),
+    Size=UDim2.new(0,550,0,250),
+    Active=true,
+    BackgroundColor3=Color3.fromHex("#111"),
+    BackgroundTransparency=.15,
+    Padding=10,
+    HorizontalAlign="Center",
+    VerticalAlign="Center",
+});
+            </code></pre>
+        </div>
     </div>
 </section>
 

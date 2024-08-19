@@ -1,4 +1,5 @@
 @import url("https://fonts.cdnfonts.com/css/frankfurt-messe");
+@import url("https://fonts.cdnfonts.com/css/jetbrains-mono");
 html, html * {
   margin: 0;
   padding: 0;
@@ -12,6 +13,17 @@ html::selection, html *::selection {
   background: #ffeb78;
   color: #252525;
 }
+html::-webkit-scrollbar, html *::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+html::-webkit-scrollbar-thumb, html *::-webkit-scrollbar-thumb {
+  background: #4a4a4a;
+  border-radius: 5vmin;
+}
+html::-webkit-scrollbar-track, html *::-webkit-scrollbar-track {
+  background: #373737;
+}
 
 logo, logo * {
   display: inline-block;
@@ -23,7 +35,7 @@ logo span {
 }
 
 .button, .button2 {
-  padding: 1.15vmin;
+  padding: 1.15vmin 3.5vmin;
   font-size: 2.5vmin;
   background: #ffeb78;
   cursor: pointer;
@@ -93,10 +105,20 @@ section {
 section h1 {
   color: #f5f5f5;
   font-size: 6.5vmin;
-  padding-bottom: 2.5vmin;
+  padding-bottom: 1.5vmin;
 }
 section h1 logo {
   font-size: 8vmin;
+}
+section h2 {
+  color: #d2d2d2;
+  font-size: 4vmin;
+  padding-bottom: 1vmin;
+}
+section ul {
+  color: #d2d2d2;
+  font-size: 3.5vmin;
+  list-style: square inside url("../bullet_scaled.png");
 }
 section p {
   font-size: 3vmin;
@@ -136,10 +158,10 @@ section p a:hover {
 #s1 .textWrapper::after {
   content: "";
   position: absolute;
-  top: calc(var(--y, 0) * 1px - 50px);
-  left: calc(var(--x, 0) * 1px - 50px);
-  transform: translate(-100px, -100px);
-  width: 35vmin;
+  top: calc(var(--y, 0) * 1px);
+  left: calc(var(--x, 0) * 1px);
+  transform: translate(-50%, -50%);
+  width: 75vmin;
   aspect-ratio: 1/1;
   opacity: 0.6;
   background: radial-gradient(#5f5f5f, rgba(255, 255, 255, 0) 60%);
@@ -175,10 +197,10 @@ section p a:hover {
 #s1 .textWrapper2::after {
   content: "";
   position: absolute;
-  top: calc(var(--y, 0) * 1px - 50px);
-  left: calc(var(--x, 0) * 1px - 50px);
-  transform: translate(-100px, -100px);
-  width: 35vmin;
+  top: calc(var(--y, 0) * 1px);
+  left: calc(var(--x, 0) * 1px);
+  transform: translate(-50%, -50%);
+  width: 75vmin;
   aspect-ratio: 1/1;
   opacity: 0.6;
   background: radial-gradient(#5f5f5f, rgba(255, 255, 255, 0) 60%);
@@ -189,4 +211,72 @@ section p a:hover {
 }
 #s1 .textWrapper2:hover::after {
   opacity: 0.5;
+}
+
+#s2 {
+  padding: 0 !important;
+  height: 100vmin !important;
+}
+#s2 .textWrapper {
+  height: calc(100% - 4vmin);
+  width: calc(50% - 3vmin);
+  border-radius: 1vmin;
+  background: #373737;
+  border: 0.2vmin solid #4a4a4a;
+  padding: 5vmin;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  top: 2vmin;
+  --x: 0;
+  --y: 0;
+  width: calc(100% - 4vmin);
+  left: 2vmin;
+  top: 0%;
+}
+#s2 .textWrapper * {
+  z-index: 58;
+}
+#s2 .textWrapper::after {
+  content: "";
+  position: absolute;
+  top: calc(var(--y, 0) * 1px);
+  left: calc(var(--x, 0) * 1px);
+  transform: translate(-50%, -50%);
+  width: 75vmin;
+  aspect-ratio: 1/1;
+  opacity: 0.6;
+  background: radial-gradient(#5f5f5f, rgba(255, 255, 255, 0) 60%);
+  opacity: 0;
+}
+#s2 .textWrapper::after * {
+  z-index: 57;
+}
+#s2 .textWrapper:hover::after {
+  opacity: 0.5;
+}
+#s2 .textWrapper::after {
+  content: none !important;
+}
+#s2 .textWrapper .subTextWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vmin;
+  height: 75vmin;
+  overflow-y: scroll;
+  padding: 1vmin;
+}
+#s2 .textWrapper .subTextWrapper code {
+  padding: 0 2.5vmin !important;
+  border-radius: 1vmin;
+  border: 0.2vmin solid #4a4a4a;
+  font-size: 2vmin;
+}
+#s2 .textWrapper .subTextWrapper code, #s2 .textWrapper .subTextWrapper code * {
+  font-family: "JetBrains Mono", sans-serif !important;
 }/*# sourceMappingURL=style.css.map */
